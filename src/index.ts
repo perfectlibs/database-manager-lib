@@ -2,9 +2,11 @@ import ConnectionDatabase from './clients/Connection';
 import MongoConnection from './clients/MongoConnection';
 import MysqlConnection from './clients/MysqlConnection';
 import PostgresqlConnection from './clients/PostgresqlConnection';
+import { setIdTables } from './functions/processData';
 
-export default class DatabaseClient {
-    private database!: ConnectionDatabase;
+export class DatabaseClient {
+
+    private databaseManager: DatabaseManager;
 
     /**
      * @param keys
@@ -30,17 +32,28 @@ export default class DatabaseClient {
         port: number,
         password: string
     }) {
-        this.setDatabaseClient(keys);
+        this.databaseManager = new DatabaseManager(keys);
     }
 
-    private setDatabaseClient(keys: {
+    public setKeyTables(idTables: { table: string, primaryKey: string }[]): DatabaseManager {
+        setIdTables(idTables);
+        return this.databaseManager;
+    }
+
+}
+
+class DatabaseManager {
+
+    private database!: ConnectionDatabase;
+
+    constructor(keys: {
         client: string,
         host: string,
         database: string,
         user: string,
         port: number,
         password: string
-    }): void {
+    }) {
         switch(keys.client) {
             case 'postgres':
             case 'postgresql':
