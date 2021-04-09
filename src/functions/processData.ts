@@ -1,8 +1,16 @@
+let primaryKeyTables: { table: string, primaryKey: string }[]
+
+export const setIdTables = (idTables: { table: string, primaryKey: string }[]): void => {
+    primaryKeyTables = idTables;
+}
+
 export const getIdDB = (table: string): string => {
-    switch (table) {
-        default:
-            return 'id';
+    for(let primaryKey of primaryKeyTables) {
+        if(primaryKey.table === table) {
+            return primaryKey.primaryKey;    
+        }
     }
+    return '';
 }
 
 export const getValueText = (table: string, data: { [x: string]: any; }, databaseType: string = 'mysql'): string => {
