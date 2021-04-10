@@ -42,6 +42,7 @@ export class DatabaseClient {
 
 }
 
+
 class DatabaseManager {
 
     private database!: ConnectionDatabase;

@@ -1,13 +1,14 @@
 {
-  "name": "database-manager-lib",
+  "name": "lib-database-manager",
   "version": "1.0.0",
   "description": "Libreria para gestion CRUD de bases de datos como mysql, mongo y postgres",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "prebuild": "rm -rf build",
+    "prebuild": "rm -rf build docs",
     "build": "tsc",
-    "postbuild": "typedoc"
+    "postbuild": "typedoc",
+    "prepublish": "build"
   },
   "repository": {
     "type": "git",
