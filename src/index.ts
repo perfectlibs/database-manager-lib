@@ -14,7 +14,7 @@ export class DatabaseClient {
      * 
      * Using the client key.
      * 
-     * By default we use mysql databse.
+     * By default we use mysql database.
      * 
      * But you can define:
      * 

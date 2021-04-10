@@ -1,6 +1,6 @@
 {
   "name": "lib-database-manager",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Libreria para gestion CRUD de bases de datos como mysql, mongo y postgres",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -8,7 +8,7 @@
     "prebuild": "rm -rf build docs",
     "build": "tsc",
     "postbuild": "typedoc",
-    "prepublish": "build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/perfectlibs/database-manager-lib/issues"
   },
-  "homepage": "https://github.com/perfectlibs/database-manager-lib#readme",
+  "homepage": "https://perfectlibs.github.io/database-manager-lib/",
   "devDependencies": {
     "@types/mongodb": "^3.6.12",
     "@types/mysql": "^2.15.18",
