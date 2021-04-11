@@ -1,6 +1,6 @@
 {
   "name": "database-manager-lib",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Libreria para gestion CRUD de bases de datos como mysql, mongo y postgres",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
